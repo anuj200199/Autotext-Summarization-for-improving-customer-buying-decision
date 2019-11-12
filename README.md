@@ -43,10 +43,10 @@ Humans seem to make spelling mistakes often while writing anything, whether it b
 
 The first step is to edit the word by  removing a letter, replacing a letter, swapping letters or inserting a letter. We will create a list of all the edits. The probability of each word in the edited list is calculated as relative frequency to frequency of total words in a large document. From the probability values, we produce the candidates that are likely to replace the word in order of priority.
 
-	1. The original word, if is known.<br>
-	2. The list of words at distance one away.<br>
-	3. The list of words at distance two away.<br>
-	4. The original word, even though it is not known.<br>
+	1. The original word, if is known.
+	2. The list of words at distance one away.
+	3. The list of words at distance two away.
+	4. The original word, even though it is not known.
 
 After steps 2,3 and 4 the processed sentences are stored in <b><i>processed_sentences.csv</i></b>
 <br>

@@ -23,8 +23,10 @@ Small Excerpt of big.txt
 ![A small excerpt from the file conatining reviews](https://user-images.githubusercontent.com/51110977/68645253-7c03f700-053d-11ea-8287-1ce39dbcdb6c.PNG)
  
 <h3>TEXT PROCESSING</h3>
+
 <b>1. Sentence Tokenization</b>
 For the generated text , we split the text into sentences. Sentence splitting is done to store each of the review and indexing them so that after further processing and textrank, we can extract the original representation which is syntactically meaningful.
+
 
 <b>2. Decontraction</b>
 Reviews are usually written using short forms of the words or combining two words. For example, some consumers may write "The product hasn't been upto my expectation" and others may write "The product has not been upto my expectation". In order to avoid the same sentences being identified as different sentences, all the contracted words are converted into their expanded forms. Some of the examples are
@@ -39,10 +41,10 @@ Humans seem to make spelling mistakes often while writing anything, whether it b
 
 The first step is to edit the word by  removing a letter, replacing a letter, swapping letters or inserting a letter. We will create a list of all the edits. The probability of each word in the edited list is calculated as relative frequency to frequency of total words in a large document. From the probability values, we produce the candidates that are likely to replace the word in order of priority.
 
- 1. The original word, if is known.
-	2. The list of words at distance one away.
-	3. The list of words at distance two away.
-	4. The original word, even though it is not known.
+	1. The original word, if is known.<br>
+	2. The list of words at distance one away.<br>
+	3. The list of words at distance two away.<br>
+	4. The original word, even though it is not known.<br>
 
 <h3>Synsets Generation</h3>
 To gain better results while generating the summary, we also have to consider the synonyms of words while calculating sentence similarity. These synonyms are called as synsets.
@@ -57,15 +59,15 @@ For calculating between two sentences s1 and s2, first generate individual list 
 The similarity between all the sentences are stored in the <b><i>similarity_matrix.csv</i></b>
 
 <h3>SELECTING HIGHER RANKED SENTENCES</h3>
-<b>Graph Based Algorithm</b>
+<b>Graph Based Algorithm</b><br>
 Graph is a data structure consisting of a set of vertices and edges representing the relationship between the vertices. In our case, the vertices represent the sentences and the edges, the similarity between them. The next step is to apply TextRank, a version of PageRank to generate the summary.
-
-<b>TextRank</b>
+<br>
+<b>TextRank</b><br>
 In textrank, the vertices are the tokenized sentences. Weights are assigned to the edges connecting the node using similarity value. With arbitrary initial values, the iterative formula is run for each node until it converges below a specified threshold value.
 
 <h3>SUMMARY GENERATION</h3>
 The output of textrank algorithm is the ranking of the sentences. Depending upon our requirements we will select the first n sentences.
 
-Output after selecting first 5 senetences
+Output after selecting first 5 senetences<br>
 ![Summarised output identifying the overall product sentiment](https://user-images.githubusercontent.com/51110977/68645334-b1a8e000-053d-11ea-82be-5da07733f18d.PNG)
 

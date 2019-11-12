@@ -9,6 +9,4 @@ A small excerpt from the file conatining reviews:
  Summarised output identifying the overall product sentiment:
 ![Summarised output identifying the overall product sentiment](https://user-images.githubusercontent.com/51110977/68645334-b1a8e000-053d-11ea-82be-5da07733f18d.PNG)
 
-
-
-<b>DATASET</b>
+<h3>DATASET USED</h3>

@@ -52,7 +52,7 @@ After steps 2,3 and 4 the processed sentences are stored in <b><i>processed_sent
 <br>
 For text processing, run <b><i>preprocess.ipynb</i></b>
 <br><br>
-<h3>Synsets Generation</h3>
+<h3>SYNSETS GENERATION</h3>
 To gain better results while generating the summary, we also have to consider the synonyms of words while calculating sentence similarity. These synonyms are called as synsets.
 
 ![synsets](https://user-images.githubusercontent.com/51110977/68648206-d3a66080-0545-11ea-9578-5cd871bb7eeb.PNG)

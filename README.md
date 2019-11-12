@@ -14,7 +14,7 @@ A small excerpt from the file conatining reviews:
 
 <h3>DATASET USED</h3>
 
-In our case, we are using the Amazon Reviews Dataset(reviews_data.csv) containing 5000 reviews for a total of 23 products. The figure below shows the distribution of reviews of 5 products.
+In our case, we are using the Amazon Reviews Dataset(reviews_data.csv present under reviews_data.zip) containing 5000 reviews for a total of 23 products. The figure below shows the distribution of reviews of 5 products.
 
 ![Reviews per product](https://user-images.githubusercontent.com/51110977/68646073-0fd6c280-0540-11ea-8b24-47b0213673f4.png)\
 

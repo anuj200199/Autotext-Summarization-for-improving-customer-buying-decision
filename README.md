@@ -1,5 +1,8 @@
 # Autotext-Summarization-for-improving-customer-buying-decision
-The project summarizes the reviews of a particular product on a website capturing the sentiment helping customer decide whether to buy the product or not.
+The project summarizes the reviews of a particular product on a website capturing the sentiment helping customer decide whether to buy the product or not. The project uses TextRank algorithm used to rank sentences which is a variation of PageRank used to rank web pages.
+
+Pagerank Visualization
+![pagerank](https://user-images.githubusercontent.com/51110977/68650108-2f72e880-054a-11ea-9e50-9464682aab5b.png)
 
 The input to the project will be a text file containing all reviews of a particular product and the output will be a summary helping the potential buyers identify the strengths and weakness of the product.
 
@@ -25,7 +28,7 @@ Small Excerpt of big.txt
 <h3>TEXT PROCESSING</h3>
 
 <b>1. Sentence Tokenization</b>
-For the generated text , we split the text into sentences. Sentence splitting is done to store each of the review and indexing them so that after further processing and textrank, we can extract the original representation which is syntactically meaningful stored in <b></i>split_sentences.csv</i></b>
+For the generated text , we split the text into sentences. Sentence splitting is done to store each of the review and indexing them so that after further processing and textrank, we can extract the original representation which is syntactically meaningful stored in <b><i>split_sentences.csv</i></b>
 
 <b>2. Decontraction</b>
 Reviews are usually written using short forms of the words or combining two words. For example, some consumers may write "The product hasn't been upto my expectation" and others may write "The product has not been upto my expectation". In order to avoid the same sentences being identified as different sentences, all the contracted words are converted into their expanded forms. Some of the examples are

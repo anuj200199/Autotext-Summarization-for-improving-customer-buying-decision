@@ -15,7 +15,7 @@ In our case, we are using the Amazon Reviews Dataset(reviews_data.csv) containin
 
 ![Reviews per product](https://user-images.githubusercontent.com/51110977/68646073-0fd6c280-0540-11ea-8b24-47b0213673f4.png)\
 
-We have to group and concatenate the reviews by product and store in a csv format. The grouped reviews are stored under the product_grouped.csv file.
+We have to group and concatenate the reviews by product and store in a csv format. The grouped reviews are stored under the <b><i>product_grouped.csv</i></b> file.
 
 We will summarise the reviews of the first product - <b>All new fire HD tablet. 8HD display, WiFi, 16GB - includes special offer , Blue</b> containing 51 reviews and store in the file big.txt.
 
@@ -25,8 +25,7 @@ Small Excerpt of big.txt
 <h3>TEXT PROCESSING</h3>
 
 <b>1. Sentence Tokenization</b>
-For the generated text , we split the text into sentences. Sentence splitting is done to store each of the review and indexing them so that after further processing and textrank, we can extract the original representation which is syntactically meaningful.
-
+For the generated text , we split the text into sentences. Sentence splitting is done to store each of the review and indexing them so that after further processing and textrank, we can extract the original representation which is syntactically meaningful stored in <b></i>split_sentences.csv</i></b>
 
 <b>2. Decontraction</b>
 Reviews are usually written using short forms of the words or combining two words. For example, some consumers may write "The product hasn't been upto my expectation" and others may write "The product has not been upto my expectation". In order to avoid the same sentences being identified as different sentences, all the contracted words are converted into their expanded forms. Some of the examples are
@@ -46,6 +45,10 @@ The first step is to edit the word by  removing a letter, replacing a letter, sw
 	3. The list of words at distance two away.<br>
 	4. The original word, even though it is not known.<br>
 
+After steps 2,3 and 4 the processed sentences are stored in <b><i>processed_sentences.csv</i></b>
+<br>
+For text processing, run <b><i>preprocess.ipynb</i></b>
+<br><br>
 <h3>Synsets Generation</h3>
 To gain better results while generating the summary, we also have to consider the synonyms of words while calculating sentence similarity. These synonyms are called as synsets.
 
@@ -56,18 +59,20 @@ For calculating between two sentences s1 and s2, first generate individual list 
 
 ![similarity](https://user-images.githubusercontent.com/51110977/68648286-04869580-0546-11ea-9bdd-37fc2191937c.PNG)
 
-The similarity between all the sentences are stored in the <b><i>similarity_matrix.csv</i></b>
+The similarity between all the sentences are stored in the <b><i>similarity_matrix.csv</i></b> as the output of <i></b>similarity.ipynb</i></b>
 
 <h3>SELECTING HIGHER RANKED SENTENCES</h3>
 <b>Graph Based Algorithm</b><br>
 Graph is a data structure consisting of a set of vertices and edges representing the relationship between the vertices. In our case, the vertices represent the sentences and the edges, the similarity between them. The next step is to apply TextRank, a version of PageRank to generate the summary.
 <br>
+<br>
 <b>TextRank</b><br>
-In textrank, the vertices are the tokenized sentences. Weights are assigned to the edges connecting the node using similarity value. With arbitrary initial values, the iterative formula is run for each node until it converges below a specified threshold value.
+In textrank, the vertices are the tokenized sentences. Weights are assigned to the edges connecting the node using similarity value. With arbitrary initial values, the iterative formula is run for each node until it converges below a specified threshold value.See <b><i>textrank.ipynb</i></b>
 
 <h3>SUMMARY GENERATION</h3>
 The output of textrank algorithm is the ranking of the sentences. Depending upon our requirements we will select the first n sentences.
+Run <b><i>textrank.ipynb</i></b>
 
-Output after selecting first 5 senetences<br>
+Output after selecting first 5 senetences<br><br>
 ![Summarised output identifying the overall product sentiment](https://user-images.githubusercontent.com/51110977/68645334-b1a8e000-053d-11ea-82be-5da07733f18d.PNG)
 
